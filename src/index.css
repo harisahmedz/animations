@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  @apply bg-slate-950
+}
+
+.custom-animations {
+
+}
+
+.custom-animations div {
+  transition: background-color 0.5s ease-in-out;
+}
+.custom-animations div:hover {
+  background-color: blue;
+}
+@keyframes move {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(50px); }
+  100% { transform: translateX(100px); }
+}
+.custom-animations div:nth-child(2) {
+  animation: move 2s infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.custom-animations div:nth-child(3) {
+  animation: fadeIn 2s ease-in;
+}
+
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.custom-animations div:nth-child(4) {
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+}
+.custom-animations div:nth-child(5) {
+  animation: bounce 2s infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.custom-animations div:nth-child(6) {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes perspective  {
+  from { transform: rotate(0deg); }
+  to { transform: perspective(500px) rotateY(180deg);transform-origin: top left;  }
+}
+.custom-animations div:nth-child(7) {
+  animation: perspective  1s linear infinite;
+}
+
+.custom-animations div:nth-child(8) {
+    transform: rotateX(45deg) rotateY(45deg);
+  transform-style: preserve-3d;
+}
+
+
+@keyframes bounce {
+      0% { transform: translateY(0); }
+      25% { transform: translateY(-100px); }
+      50% { transform: translateY(0); }
+      75% { transform: translateY(-50px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Animated Element */
+    .ball {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      margin: 100px auto;
+      animation-name: bounce; /* Specifies the keyframes */
+      animation-duration: 2s; /* Duration of each animation cycle */
+      animation-timing-function: ease; /* Controls the pace */
+      animation-delay: 1s; /* Delay before animation starts */
+      animation-iteration-count: infinite; /* Runs forever */
+      animation-direction: alternate; /* Alternates forward and backward */
+      animation-fill-mode: forwards; /* Retains styles after animation */
+      animation-play-state: running; /* Animation is running */
+    }
+
+    /* Paused state for demonstration */
+    .paused {
+      animation-play-state: paused; /* Pauses the animation */
+    }
+/* 
+
+animation-name	Specifies the name of the keyframes	animation-name: bounce;
+animation-duration	Duration of the animation	animation-duration: 2s;
+animation-timing-function	Controls the pace of the animation	animation-timing-function: ease;
+animation-delay	Delay before the animation starts	animation-delay: 1s;
+animation-iteration-count	Number of times the animation repeats	animation-iteration-count: infinite;
+animation-direction	Defines direction (normal, reverse, alternate)	animation-direction: alternate;
+animation-fill-mode	Controls how styles apply before/after animation	animation-fill-mode: forwards;
+animation-play-state
+  animation: move(NAME) 2s(DURATION) infinite(delay);
+*/
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
+}
