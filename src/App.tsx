@@ -1,5 +1,6 @@
 import { motion, useAnimation, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
+import ZoomParallex from "./Components/ZoomParallex";
 
 const gridContainerVariants = {
   hidden: { opacity: 0 },
@@ -46,7 +47,8 @@ const paragraphTwoValue = useTransform(scrollYProgress, [0, 1], ['100%', '0%']);
     }
   }, [isInView]);
   return (
-    <>
+    <section>
+    <ZoomParallex/>
       <div className="flex flex-col gap-10 overflow-hidden">
         <motion.section
           variants={gridContainerVariants}
@@ -209,7 +211,7 @@ const paragraphTwoValue = useTransform(scrollYProgress, [0, 1], ['100%', '0%']);
       </div>
       <CSSAnimations/>
 
-    </>
+    </section>
   );
 }
 
